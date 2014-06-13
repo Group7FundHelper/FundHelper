@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import org.util.FileUtil;
 import org.util.UpdateFundJz;
@@ -57,6 +58,7 @@ public class FundDiffUI extends javax.swing.JPanel {
 	
 	private void diffFund(){
 		if (jTextField1.getText().equals("") || jTextField2.getText().equals("")) {
+			JOptionPane.showMessageDialog(null, "请正确输入！");
 			return;
 		} else {
                                 

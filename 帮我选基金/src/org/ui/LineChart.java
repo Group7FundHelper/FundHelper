@@ -12,6 +12,9 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.swing.JOptionPane;
+
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -65,8 +68,7 @@ public class LineChart {
 			try {
 				br = new BufferedReader(new FileReader(file));
 			} catch (FileNotFoundException ex) {
-				Logger.getLogger(LineChart.class.getName()).log(Level.SEVERE,
-						null, ex);
+				JOptionPane.showMessageDialog(null, "请正确输入！");
 			}
 			String s = null;
 			int year = 0;

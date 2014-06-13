@@ -18,6 +18,8 @@ import java.util.logging.Logger;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
+import javax.swing.JOptionPane;
+
 public class FileUtil {
 
 	public static String getFundInfo(String fundNum) {
@@ -114,7 +116,7 @@ public class FileUtil {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "暂无数据！");
 		}
 		String s;
 		int i = 0;
