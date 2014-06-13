@@ -20,6 +20,8 @@ import java.text.SimpleDateFormat;
 
 import javax.swing.JOptionPane;
 
+import org.ui.LoadUI;
+
 public class FileUtil {
 
 	public static String getFundInfo(String fundNum) {
@@ -38,6 +40,7 @@ public class FileUtil {
 			}
 			br.close();
 		} catch (FileNotFoundException ex) {
+			
 			Logger.getLogger(FileUtil.class.getName()).log(Level.SEVERE, null,
 					ex);
 		} catch (IOException ex) {
@@ -70,8 +73,11 @@ public class FileUtil {
 			br.close();
 			return ret;
 		} catch (FileNotFoundException ex) {
-			Logger.getLogger(FileUtil.class.getName()).log(Level.SEVERE, null,
-					ex);
+			try {
+				DownloadFund.downloadfundjz();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		} catch (IOException ex) {
 			Logger.getLogger(FileUtil.class.getName()).log(Level.SEVERE, null,
 					ex);

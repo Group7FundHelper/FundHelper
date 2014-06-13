@@ -44,7 +44,7 @@ public class LoadUI extends JWindow implements Runnable {
 		setVisible(true);
 		try {
 			for (int i = 0; i < 100; i++) {
-				Thread.sleep(100);
+				Thread.sleep(50);
 				progress.setValue(progress.getValue() + 1);
 			}
 		} catch (Exception ex) {
@@ -64,5 +64,10 @@ public class LoadUI extends JWindow implements Runnable {
 	public static void main(String[] args) {
 		LoadUI splash = new LoadUI();
 		splash.start();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

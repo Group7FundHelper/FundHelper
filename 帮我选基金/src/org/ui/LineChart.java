@@ -27,6 +27,7 @@ import org.jfree.data.time.Day;
 import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
 import org.jfree.data.xy.XYDataset;
+import org.util.DownloadFund;
 
 public class LineChart {
 	static ChartFrame createLineChart(String[] fundNum) {
@@ -68,6 +69,11 @@ public class LineChart {
 			try {
 				br = new BufferedReader(new FileReader(file));
 			} catch (FileNotFoundException ex) {
+				try {
+					DownloadFund.downloadfundjz(fundNum[i]);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 				JOptionPane.showMessageDialog(null, "请正确输入！");
 			}
 			String s = null;

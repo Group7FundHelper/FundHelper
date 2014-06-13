@@ -52,7 +52,7 @@ public class FundSearchUI extends javax.swing.JPanel {
 				"前10", "前20", "前30", "前40", "前50"}));
 		jComboBox3.setFont(new java.awt.Font("微软雅黑", 1, 12));
 		
-		String[] tableHeads = new String[] {"排名", "基金编号", "基金名称", "基金净值" };
+		String[] tableHeads = new String[] {"排名", "基金编号", "基金名称", "基金涨幅" };
 		final DefaultTableModel dtm = (DefaultTableModel) jTable2.getModel();
 		dtm.setColumnIdentifiers(tableHeads);
 		jTable2.getTableHeader().setFont(new java.awt.Font("微软雅黑", 1, 12));
